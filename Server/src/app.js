@@ -3,18 +3,26 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 const app = express();
+app.set("trust proxy", 1);
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      if (!origin) return callback(null, true);
-      if (origin === "http://localhost:5173" || origin === "http://localhost:5174") {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
+
+      const allowedOrigins = [
+        "http://localhost:5173",
+        "http://localhost:5174",
+        process.env.CLIENT_URL,
+        process.env.ADMIN_URL,
+      ];
+
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
       }
+
+      return callback(new Error("Not allowed by CORS"));
     },
-    credentials: true
+    credentials: true,
   })
 );
 app.use(express.json());
