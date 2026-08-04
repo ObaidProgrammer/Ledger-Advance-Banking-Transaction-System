@@ -1,0 +1,816 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body, #root {
+  height: 100%;
+}
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container-fluid{
+     background-color: var(--bg-primary-color);
+}
+.Dashboard .box,
+.Latest-Transaction,
+.activity-card,
+.transaction-Details{
+    transition: transform .25s ease,
+                box-shadow .25s ease;
+}
+
+.Dashboard .box:hover,
+.Latest-Transaction:hover,
+.activity-card:hover,
+.transaction-Details:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 18px 35px rgba(0,0,0,.12);
+}
+.SideBar .nav .nav-link{
+    transition: all .25s ease;
+}
+.SideBar .nav .nav-link:hover{
+    transform: translateX(6px);
+}
+.container-fluid{
+    animation:fadePage .35s ease;
+}
+@keyframes fadePage{
+from{
+opacity:0;
+transform:translateY(12px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+.loader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--bg-third-color);
+}
+.loader .load{
+  height: 120px;
+  width: 120px;
+}
+.Login {
+    background-color: var(--bg-primary-color);
+}
+.Login .card{
+  width: 350px;
+  padding: var(--padding-lg);
+  background-color: var(--bg-primary-color);
+}
+.Login .card .logo img{
+    height: 80px;
+    width: 80px;
+    border-radius: 10px;
+    margin: var(--margin-md);
+}
+.Login .card h3{
+    color: var(--text-primary-color);
+    margin: var(--margin-sm);
+    font-size: var(--font-size-2xl);
+}
+.Login .card .logo {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+.Login .card .btn{
+    background-color: var(--bg-secondary-color);
+    color: var(--bg-primary-color);
+}
+.SideBar{
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--bg-secondary-color);
+}
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.sidebar-wrapper{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.SideBar{
+    margin-left: 0 !important;
+}
+.SideBar .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px;
+    max-height:120px ;
+    margin: var(--margin-md);
+    padding: var(--padding-2xl) var(--padding-md);
+}
+.SideBar .logo a {
+   text-decoration: none;
+   color: var(--text-secondary-color);
+}
+.SideBar .logo a img{
+    min-height: 60px;
+    max-height: 90px;
+    padding-top: var(--padding-sm);
+}
+.SideBar .logo a h2{
+  color: var(--bg-primary-color) !important;
+  font-size: 30px;
+}
+.SideBar .nav {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-lg) 0px;
+}
+
+.SideBar .nav .nav-link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: start;
+  gap: var(--gutter-sm);
+  padding:var(--padding-sm) var(--padding-md) ;
+  margin: 0px var(--margin-lg);
+  font-size: var(--font-size-lg);
+  border-radius: 6px;
+  color: var(--bg-primary-color) !important;
+}
+.SideBar .nav .nav-link span svg {
+    font-size: var(--font-size-xl);
+    
+}
+.SideBar button{
+  color: var(--bg-primary-color) !important;
+  padding: var(--padding-md);
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+   border: 1px solid var(--border-primary-color);
+    margin: 10px 10px 5px -5px;
+    border-radius: 10px;
+    background-color: var(--bg-primary-color) !important;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.nav-bar .text{
+      margin: var(--margin-sm) ;
+  padding: var(--padding-sm);
+
+}
+.nav-bar .text h3{
+         font-size: 30px;
+    color: var(--text-cash-color);
+    font-weight: 700;
+
+}
+.nav-bar .text h5{
+   font-size: 17px;
+    color: var(--text-secondary-color);
+}
+.nav-bar .role-logout{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+
+.nav-bar .role-logout button svg{
+  font-size: 25px;
+  color: var(--text-total-color);
+} 
+.Dashboard h5 {
+  font-size: 18px;
+  font-weight: 700;
+}
+.Dashboard .box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+   border: 1px solid var(--border-primary-color);
+    padding: var(--padding-md);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: var(--margin-sm) 0px;
+  background-color: var(--bg-received-color);
+}
+.Dashboard .box .text h3{
+    font-size: 21px;
+    font-weight: 650;
+}
+.Dashboard .box .text h6{
+    font-size: 18px;
+    font-weight: 600;
+}
+.Dashboard .cash-on-hand {
+  background-color: var(--bg-balance-color);
+}
+.Dashboard .cash-on-hand h3{
+  color: var(--text-cash-color);
+}
+.Dashboard .total-customer,
+.Dashboard .total-transcations {
+ color: var(--text-cash-color);
+ font-weight: bold;
+}
+.Dashboard .total-Deposit {
+  background-color: var(--bg-success-color);
+}
+.Dashboard .total-Deposit h3{
+ color: var(--text-deposite-color);
+}
+.Dashboard .total-Withdraw {
+  background-color: var(--bg-received-color);
+}
+.Dashboard .total-Withdraw h3{
+  color: var(--text-withdraw-color);
+}
+.Dashboard .box .icon{
+  height: 12vh;
+  border: 1px solid var(--border-primary-color);
+  overflow: hidden;
+  width: 14vh;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 10px;
+}
+.Dashboard .box .icon svg{
+  width: 100%;
+}
+
+.Dashboard .total-Deposit .icon svg{
+  font-size: 8vh;
+ color: var(--text-deposite-color);
+ }
+.Dashboard .total-Withdraw .icon svg{
+    font-size: 8vh;
+  color: var(--text-withdraw-color);
+ }
+ .Latest-Transaction{
+   border: 1px solid var(--border-primary-color);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: var(--margin-sm) 0px;
+    background-color: var(--bg-balance-color);
+
+ }
+  .Latest-Transaction .text {
+    padding: var(--padding-md);
+    color: var(--text-cash-color);
+    text-align: center;
+  }
+    .Latest-Transaction .text h3{
+      font-weight: 700;
+    }
+.FilterBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border-primary-color);
+  padding: var(--padding-sm);
+  border-radius: 10px;
+  background-color: var(--bg-balance-color);
+}
+.FilterBar .filter-select {
+  min-width: 180px;
+}
+.FilterBar .filter-value-select {
+  min-width: 180px;
+}
+.FilterBar .filter-input {
+  min-width: 250px;
+}
+.FilterBar .form-select:focus,
+.FilterBar .form-control:focus {
+    border-color: inherit !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+.FilterBar .form-select{
+    font-size: 15px;
+}
+.FilterBar .form-control::placeholder{
+    font-size: 15px;   
+  }
+.FilterBar .filter-btn {
+  width: 45px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.FilterBar .filter-btn:hover{
+  color: var(--bg-primary-color);
+  background-color: var(--bg-button2-color);
+}
+.FilterBar .search-btn {
+  background: var(--bg-button-color);
+  color: var(--text-active-color);
+}
+.FilterBar .reset-btn {
+  background: var(--text-withdraw-color);
+  color: var(--text-active-color);
+}
+.FilterBar .date-filter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main {
+  border: 1px solid var(--border-primary-color);
+  height: 100%;
+  padding: var(--padding-md);
+  border-radius: 12px;
+  
+}
+.main h2{
+   color: var(--text-cash-color);
+   font-weight: 650;
+}
+.main .main-table{
+  border: 1px solid var(--border-primary-color);
+  border-radius: 10px;
+  padding: var(--padding-md);
+  height: 100%;
+  margin: var(--margin-sm) 0px;
+}
+.main table td{
+      font-size: 14px;
+    font-weight: 600;
+}
+.main table .Action{
+  text-align: center;
+}
+
+.main table .Action span svg{
+  font-size: 20px;
+  color: var(--text-secondary-color);
+}
+.main table .Action-Admin{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.main table .Action-Admin span svg{
+  font-size: 20px;
+}
+.main table .Action-Admin .Edit-details{
+  color: var(--text-withdraw-color);
+}
+.main table .Action-Admin .View-details{
+  color: var(--text-secondary-color);
+}
+.main table .Action-Admin .Edit-status{
+  color: var(--text-cash-color);
+}
+.main .Create-user svg{
+  color: var(--text-cash-color);
+  margin:0px var(--margin-sm);
+}
+
+.mainDetails{
+  border: 1px solid var(--border-primary-color);
+  padding: var(--padding-md);
+  border-radius: 12px;
+}
+.mainDetails h2{
+  color: var(--text-cash-color);
+}
+.mainDetails table,
+.mainDetails table th,
+.mainDetails table td{
+    background-color: var(--bg-balance-color) !important;
+    color: var(--text-primary-color);
+}
+.mainDetails table{
+  border-radius: 10px;
+}
+.transaction-Details{
+  border: 1px solid var(--border-primary-color);
+  padding: var(--padding-md);
+  border-radius: 13px;
+  background-color: var(--bg-balance-color);
+}
+.transaction-Details .text h3{
+  color: var(--text-cash-color);
+  font-weight: bold;
+}
+.transac-details{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.activity-log-list{
+  border: 1px solid var(--border-primary-color);
+  padding: var(--padding-md);
+  border-radius: 15px;
+  background-color: var(--bg-balance-color);
+}
+.activity-card {
+  border: 1px solid var(--border-primary-color);
+  padding: var(--padding-md);
+  margin: var(--margin-md);
+  border-radius: 15px;
+  background-color: var(--bg-received-color);
+    position:relative;
+
+}
+.activity-view{
+    position:absolute;
+    top:0px;
+    right:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    cursor:pointer;
+    background:#eef2ff;
+    transition:.3s;
+}
+.activity-view svg{
+  font-size: 18px;
+  margin: 8px;
+  color: var(--text-cash-color);
+}
+.activity-card .activity{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.activity-card .activity span,
+.activity-card .activity p,
+.activity-card .activity small{
+  margin: 0;
+  padding: 0;
+}
+.activity-card .activity .activity-user .detail-row span{
+  font-weight: bold;
+}
+.activity-card .activity .activity-user .detail-row small{
+  color: var(--text-secondary-color);
+  font-weight: 600;
+  font-size: 13px;
+}
+.activity-card .activity .activity-action {
+  font-weight: bold;
+  font-size: 14px;
+  margin: var(--margin-md) var(--margin-lg);
+}
+.activity-card .activity .activity-action span{
+  color: var(--text-withdraw-color);
+}
+.activity-card .activity .activity-action p{
+  color: var(--text-cash-color);
+}
+.activity-card .activity .activity-description{
+  margin: 0px 15%;
+}
+.activity-card .activity .activity-description {
+  font-weight: bold;
+  font-size: 14px;
+}
+.activity-card .activity .activity-description span{
+  color: var(--text-withdraw-color);
+}
+.activity-card .activity .activity-description p,
+.activity-card .activity .activity-description small{
+  color: var(--icon-success-color);
+}
+.cash-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-sm);
+    min-height: 100%;
+}
+.cash-flow .row .card{
+    width: 370px;
+    padding: var(--padding-md);
+}
+
+.cash-flow .row .text{
+    padding: var(--padding-md) 0px;
+}
+.cash-flow .row .text h3{
+    color: var(--text-cash-color);
+    font-size: 33px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+  }
+.cash-flow .row .text span{
+    color: var(--text-secondary-color);
+    font-size: 15px;
+}
+.cash-flow .row .text small{
+  font-weight: 700;
+}
+.cash-flow .row .text h5{
+  color: var(--text-cash-color);
+  font-weight: 700;
+}
+.cash-flow .row .Recipient-details{
+      border: 1px solid var(--border-primary-color);
+   border-radius: 10px;
+   padding: var(--padding-sm);
+   background-color: var(--bg-balance-color);
+}
+.cash-flow .Recipient-account-details {
+    margin-bottom: var(--margin-sm);
+    
+}
+.cash-flow .Recipient-account .Recipient-account-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cash-flow .Recipient-account label{
+    font-size:15px;
+    padding: 0px;
+    margin: 0px;
+    font-weight: 500;
+}
+.cash-flow .btn{
+    border: 1px solid var(--bg-button-color);
+    margin: 0px var(--padding-sm);
+    background-color: var(--bg-active-color);
+    color: var(--text-active-color);
+}
+.cash-flow .btn:hover{
+  background-color: var(--bg-active-color);
+  color: var(--text-active-color);
+}
+.cash-flow .Recipient-amount {
+    margin-top: var(--margin-lg);
+}
+.cash-flow .Recipient-amount label{
+    font-size:15px;
+    padding: 0px;
+    margin: 0px;
+    font-weight: 500;
+}
+.cash-flow .Recipient-amount .btn{
+    border: 1px solid var(--bg-button-color);
+    margin: var(--padding-sm) 0PX;
+    background-color: var(--bg-active-color);
+    color: var(--text-active-color);
+}
+
+#receipt{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:5px;
+    background:var(--bg-third-color);
+}
+.receipt-container{
+    min-height: 580px;
+    width:380px;
+    background:var(--bg-primary-color);
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    display:flex;
+    flex-direction:column;
+}
+.blue-bar{
+    height: 10px;
+    background-color: var(--bg-secondary-color);
+    width: 100%;
+}
+.receipt-main-content{
+    padding:var(--padding-md);
+    position:relative;
+}
+.stamp{
+    position:absolute;
+    top:5px;
+    right:10px;
+}
+
+.stamp img{
+  height: 80px; 
+    object-fit: contain;
+    opacity: 0.85;
+
+}
+.check-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px; 
+    margin-bottom: 10px;
+}
+
+.check-icon svg{
+ font-size: 80px !important;
+    color: var(--icon-success-color);
+}
+.receipt-main-content .text{
+     text-align: center;
+    padding: 0 20px;
+}
+
+.receipt-main-content .text h2{
+      font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary-color);
+    margin: 0;
+}
+
+.receipt-main-content .text p{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary-color);
+    margin: 0;
+    word-break: break-all;
+}
+.customer-section{
+  margin: var(--margin-md) 0px;
+}
+.detail-row{
+    display:flex;
+    align-items:flex-start;
+}
+
+.detail-row span:first-child{
+    width:85px;
+    font-size:13px;
+    font-weight:700;
+    color:#444;
+}
+
+.detail-row span:last-child{
+    flex:1;
+    font-size:13px;
+    font-weight:600;
+    color:var(--text-primary-color);
+    word-break:break-word;
+}
+.dashed-line{
+    border-top:2px dashed var(--text-secondary-color);
+    margin:5px 0;
+}
+.receipt-main-content h1{
+    margin:0;
+    text-align:center;
+    font-size:30px;
+    font-weight:650;
+    color:var(--icon-success-color);
+}
+.performed-section{
+  margin: var(--margin-md) 0px;
+}
+.performed-section h3{
+    margin: 5px 0px 5px 0px;
+    font-size:18px;
+    font-weight:700;
+    color:var(--text-primary-color);
+}
+
+.footer-button,
+.image-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: auto; 
+    background-color: var(--bg-secondary-color);
+    color: var(--text-active-color); 
+    padding: 22px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid var(--border-primary-color);
+}
+
+.footer-button > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    flex: 1;
+}
+
+.receipt .receipt-container .footer-button > div:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.receipt .receipt-container .footer-button svg {
+    font-size: 24px !important;
+    color: var(--text-active-color);
+}
+
+.receipt .receipt-container .footer-button div {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--bg-third-color);
+}
+
+.image-footer {
+    justify-content: center;
+    gap: 15px;
+}
+
+.image-footer .image img {
+    height: 38px;
+    padding-right: 15px;
+    border-right: 1px solid var(--border-primary-color);
+}
+
+.image-footer .text {
+    text-align: left !important;
+}
+
+.image-footer .text p {
+    font-size: 12px !important;
+    margin: 0 !important;
+    color: var(--text-active-color) !important;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.main-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-form-details{
+  border: 1px solid var(--border-primary-color);
+  margin: var(--margin-md);
+  width: 370px;
+  padding: var(--padding-md);
+  border-radius: 14px;
+}
+.main-form-details h2{
+  color: var(--text-cash-color);
+  margin: var(--margin-md);
+}
+.main-form-details label{
+  font-weight: 600;
+  font-size: 15px;
+  margin: var(--margin-sm) 0px;
+  color: var(--text-primary-color);
+}
+.main-form-details .btn{
+  background-color: var(--bg-button-color);
+  color: var(--text-active-color);
+  margin: var(--margin-sm) 0px;
+}
+.main-form-details .btn:hover{
+  background-color: var(--bg-button-color);
+  color: var(--text-active-color);
+}
+.main-form-details .cancel-btn{
+  background-color: var(--bg-button2-color);
+  color: var(--text-active-color);
+}
+.modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.5) !important; 
+    display: flex !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    z-index: 9999 !important;
+}
+
+.modal-content {
+    background: white !important;
+    padding: 25px !important;
+    border-radius: 16px !important;
+    width: 410px !important;
+    height: 220px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3) !important;
+    position: relative !important;
+    z-index: 10000 !important;
+}
+.modal-footer .cancel-btn .btn{
+    background-color: var(--bg-button2-color)!important;
+    border: 1px solid var(--border-primary-color);
+    color: var(--text-active-color);
+}
+.modal-content h5{
+  color: var(--text-cash-color);
+}
+.modal-content label{
+  color: var(--text-withdraw-color);
+}
