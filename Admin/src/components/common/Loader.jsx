@@ -1,5 +1,5 @@
 import React from 'react'
-import loaderAnimation from "../../assets/lottie/loader.json";
+import loaderAnimation from "../../assets/lottie/Loader.json";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 
