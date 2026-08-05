@@ -2,12 +2,12 @@ import React, { useEffect, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 
-import UserInfo from "../components/UserInfo";
-import LatestTransactions from "../components/LatestTransactions";
-import Balance from "../components/Balance"; 
-import SideBar from "../components/SideBar";
-import LedgerChart from "../components/LedgerChart";
-import Accounts from "../components/Accounts";
+import UserInfo from "../Components/UserInfo";
+import LatestTransactions from "../Components/LatestTransactions";
+import Balance from "../Components/Balance"; 
+import SideBar from "../Components/SideBar";
+import LedgerChart from "../Components/LedgerChart";
+import Accounts from "../Components/Accounts";
 
 const Dashboard = () => {
   const { token, accounts, fetchAccounts } = useContext(AppContext);

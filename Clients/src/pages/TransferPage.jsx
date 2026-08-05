@@ -1,6 +1,6 @@
 import React from "react";
 import SideBar from "../Components/SideBar";
-import Transfer from "../components/Transfer";
+import Transfer from "../Components/Transfer";
 
 const TransferPage = () => {
   return (
