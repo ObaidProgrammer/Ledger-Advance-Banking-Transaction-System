@@ -14,18 +14,18 @@ connectToDB().then(async () => {
       role: "SUPER_ADMIN",
     });
 
-    if (!exists) {
-      await userModel.create({
-        name: "System Admin",
-        email: "admin@ledger.com",
-        password: "admin123",
-        role: "SUPER_ADMIN",
-      });
+    // if (!exists) {
+    //   await userModel.create({
+    //     name: "System Admin",
+    //     email: "your AdminEmail",
+    //     password: "your Password",
+    //     role: "SUPER_ADMIN",
+    //   });
 
-      console.log("Super Admin created successfully via Server Boot!");
-    } else {
-      console.log("Super Admin already exists in Database.");
-    }
+    //   console.log("Super Admin created successfully via Server Boot!");
+    // } else {
+    //   console.log("Super Admin already exists in Database.");
+    // }
   } catch (err) {
     console.error("Error during automatic seeding:", err.message);
   }
