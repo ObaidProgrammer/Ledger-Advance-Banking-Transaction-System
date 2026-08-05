@@ -19,6 +19,9 @@ connectToDB().then(async () => {
     //     name: "Your Name",
     //     email: "Super Admin Email",
     //     password: "Your Password 123",
+    //     name: "System Admin",
+    //     email: "your AdminEmail",
+    //     password: "your Password",
     //     role: "SUPER_ADMIN",
     //   });
 
