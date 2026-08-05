@@ -1,6 +1,6 @@
 import React from "react";
 import SideBar from "../Components/SideBar";
-import LatestTransactions from "../components/LatestTransactions"; // Aapka puraana component
+import LatestTransactions from "../Components/LatestTransactions"; // Aapka puraana component
 
 const TransactionsPage = () => {
   return (
