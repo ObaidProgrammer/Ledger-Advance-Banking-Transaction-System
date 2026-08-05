@@ -477,7 +477,6 @@ color: var(--bg-secondary-color);
     border: 1px solid var(--border-primary-color);
     padding: var(--padding-sm);
     border-radius: 10px;
-    background-color: var();
 }
 .Allocation .total-balance .icon svg{
     font-size: 32px;
