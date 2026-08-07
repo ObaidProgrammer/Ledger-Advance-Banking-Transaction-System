@@ -79,9 +79,6 @@ return [
   { label: "Admin", value: "ADMIN" },
   { label: "Cashier", value: "CASHIER" },
   { label: "Customer", value: "CUSTOMER" },
-  { label: "Transaction", value: "TRANSACTION" },
-  { label: "Account", value: "ACCOUNT" },
-  { label: "System", value: "SYSTEM" },
 
 ];
 case "action":
