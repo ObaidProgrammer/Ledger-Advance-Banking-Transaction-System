@@ -85,21 +85,22 @@ EMAIL_PASS=YOUR_EMAIL_PASSWORD
 ```
 ### Server.js 
  for creating your super admin uncoment the code and enter your details
+
   if (!exists) {
            await userModel.create({
-    //     name: "Your Name",
-    //     email: "Super Admin Email",
-    //     password: "Your Password 123",
-    //     name: "System Admin",
-    //     email: "your AdminEmail",
-    //     password: "your Password",
-    //     role: "SUPER_ADMIN",
-    //   });
+      name: "Your Name",
+      email: "Super Admin Email",
+      password: "Your Password 123",
+      name: "System Admin",
+      email: "your AdminEmail",
+      password: "your Password",
+      role: "SUPER_ADMIN",
+    });
+    console.log("Super Admin created successfully via Server Boot!");
+   } else {
+     console.log("Super Admin already exists in Database.");
+     }
 
-    //   console.log("Super Admin created successfully via Server Boot!");
-    // } else {
-    //   console.log("Super Admin already exists in Database.");
-    // }
 ### Customer Application
 
 Copy:
